@@ -416,15 +416,14 @@ body h1{
 /*------HAKKIMIZDA-----*/
 
 .about-us{
-    columns: 2;
-    
-    column-rule: dotted 2px rgba(136, 54, 0, 0.247);
+    display: flex;
+    margin: 50px 40px 50px 40px;
 }
 .about-us a, #aboutfoto1{
     width: 600px;
     height: 360px;
     float: left;
-    margin-left: 45px;
+    margin-left: 1rem;
 }
 
 #aboutfoto1{
@@ -433,8 +432,14 @@ body h1{
 }
 
 .aboutinfo{
-    
-    height: 360px;
+    margin: 0px 20px 0px 20px;
+    padding: 0px 20px 0px 20px;
+    float: left;
+    color: wheat;
+    font-style: italic;
+    text-align: left;
+    line-height: 1.6;
+    text-indent: 35px;
     background: rgba(255, 196, 151, 0.61);
     border: 5px solid rgb(255, 166, 0) ;
     border-radius: 20px;
@@ -455,9 +460,7 @@ body h1{
 .commentcustomer{
     margin: auto;
     width: 95%;
-    column-count: 2;
-    column-width: 40px;
-    column-rule: 1px solid black;
+    display: flex;
     background: rgba(255, 196, 151, 0.61);
     border: 5px solid rgb(255, 166, 0) ;
     border-radius: 20px;
