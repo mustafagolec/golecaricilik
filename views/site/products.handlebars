@@ -1,0 +1,26 @@
+<head>
+    <link rel="stylesheet" href="/css/products.css">
+</head>
+{{>nav1}}
+{{>navresponsive}}
+<section id="BodyMid">
+    <a href="/dilekoneri" id="wish">Dilek & Öneri</a>
+
+    <div class="page-middle">
+        {{#if sessionFlash.message}}
+        <h1 style="color: red; font-size: 40px;">{{sessionFlash.message}}</h1>
+        {{/if}}
+
+        <h1>Ürünlerimiz</h1>
+        <div class="productspage" style="display:flex;">
+            
+            <div class="photosmain" style="text-align: left; width: 80%;">
+                {{>products}}
+            </div>
+
+            {{>categories}}
+        </div>
+        <hr id="hrgold">
+    </div>
+
+</section>

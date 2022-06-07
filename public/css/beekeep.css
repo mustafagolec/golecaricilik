@@ -1,0 +1,79 @@
+/*Aricilik.html 'de , beekeep.css i style.css den daha sonra tanimladigim icin asagida belirttiğim özellikler aktif olacak*/
+body{
+    background: linear-gradient(180deg, #1751cc, #154b92, #0d3070);
+}
+
+
+body h1{
+    text-shadow: 3.5px 2px rgb(0, 162, 255);
+    color: rgb(255, 255, 255);font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold; 
+    text-decoration: dashed underline;
+}
+
+
+/*-------------NAVBAR--------------*/
+
+#logo:hover{
+    box-shadow: 0 0 0 2px rgb(234, 236, 255), 0 0 0 5px #1751cc;
+    animation: floatkeep 2s ease-in-out infinite;
+}
+
+.navbarbuttons{
+    border: 2px rgb(230, 219, 205) solid;
+    color: rgb(216, 216, 216);
+    background-color:#285ed4;
+}   
+
+.navbarbuttons:hover{
+    background-color:rgb(65, 103, 207);
+    color: rgb(255, 255, 255);
+    border: 2px rgb(25, 61, 111) solid;
+}
+#aboutbeekeepingx{
+    font-size: 15px;height: 47px;width: 220px;
+}
+#aboutbeekeepingx:hover{
+    font-size: 17px;
+    width: 235px;
+}
+#homepage{
+    transition: 0.2s all;
+}
+#homepage:hover{
+    font-size: 19px;
+    background-color:rgba(255, 205, 97, 0.8);
+    color: rgb(255, 255, 255);
+    border: 2px rgb(255, 255, 255) solid;
+    width:220px;
+}
+
+/*-------------WISH--------------*/
+
+#wish{
+    animation: wishcolchangerblue 10s infinite;
+}
+
+/*----------BILGILER KISMI----------*/
+.aboutbeebox{
+    display: flex;
+    margin: 50px 40px 50px 40px;
+}
+.aboutbeephoto{
+    width: 512px;
+    height: 288px;
+    border-radius: 20px;
+}
+.aboutbeeinfo{
+    border: #0d3070;
+    border-radius: 20px;
+    background-color: rgb(88, 136, 190);
+    margin: 0px 20px 0px 20px;
+    padding: 0px 20px 0px 20px;
+    float: left;
+    color: wheat;
+    font-style: italic;
+    text-align: left;
+    line-height: 1.6;
+    text-indent: 35px;
+}

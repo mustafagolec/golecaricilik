@@ -1,0 +1,77 @@
+.productinfo{
+    margin: 60px 150px 60px 150px;
+    display: flex;
+}
+
+.productphoto{
+    border: 2px solid orange;
+    border-radius: 30px;
+
+}
+
+.productphoto img{
+    border-radius: 30px;
+}
+
+.aboutinfo{
+    margin-left: 30px;
+    width: 700px;
+    height: 510px;
+}
+
+.addtocart{
+    font-size: 15px;
+    width: 200px;
+    background-color:rgba(255, 205, 97, 0.8);
+    color: rgb(255, 255, 255);
+    border-radius: 20%;
+    border: 2px rgb(255, 255, 255) solid;
+    padding: 10px 50px;
+    transition: all 0.2s;
+    cursor: pointer;
+    
+}
+
+.addtocart:hover{
+    background-color:rgb(255, 255, 255);
+    color: rgb(255, 166, 0);
+    border: 2px rgb(255, 145, 0) solid;
+    text-decoration: underline;
+}
+
+.stars{
+    float: left;
+    margin-left: 30px;
+}
+
+.checked{
+    color: rgb(214, 96, 0);
+}
+
+/*-------CATEGORIES-----------*/
+
+
+.kategoriler{
+    width: 20%;
+    margin-right: 3rem;
+    padding: 0px 30px 0px 30px;
+    text-align: left;
+    background-color: rgba(255, 166, 0, 0.2);
+    border: 3px solid rgb(255, 166, 0);
+    border-radius: 20px;
+}
+
+.kategori{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px black;
+    font-weight: bolder;
+    font-size: 20px;
+    transition: 0.3s all;
+}
+
+.kategori:hover{
+    font-size: 22px;
+    color: rgb(255, 166, 0);
+    text-shadow: 2px 2px black;
+}

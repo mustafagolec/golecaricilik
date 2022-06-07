@@ -1,0 +1,32 @@
+<!--Tüm sayfalarda ortak olan öğeler burada, ancak bazı kısımlar örn: navigasyon renk ve logo ayrımından ötürü parçalandı ve de...-->
+<!--karmaşayı azaltmak amacıyla partials kullanıldı ve footer vb. ogeler oraya aktarildi-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Göleç Arıcılık</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />                                                      <!--IKONLAR ICIN-->
+    
+    <link rel="stylesheet" href="/css/style.css">  <!--GENEL CSS-->
+    <link rel="stylesheet" href="/css/animations.css">   <!--GENEL ANIMASYONLAR-->
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+
+<body>
+    {{#if displayLink}}
+    <a href="/admin/index" id="adminsayfa">Admin Menüsü</a>
+    {{/if}}
+    {{{body}}}  <!--Sayfalarin kendi ozelliklerini cagirdi-->
+    
+    <script src="/js/script.js" type="text/JavaScript"></script>                                                       
+    
+    {{>footer}} <!--Footer hepsinde ortak, partials-->
+
+</body>
+
+</html>

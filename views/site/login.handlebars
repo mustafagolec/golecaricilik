@@ -1,0 +1,42 @@
+{{>nav1}}
+{{>navresponsive}}
+<section id="BodyMid">
+        <a href="/dilekoneri" id="wish">Dilek & Öneri</a>
+
+        <div class="page-middle">
+            {{#if sessionFlash.message}}
+                    <h1 style="font-size: 30px;">{{sessionFlash.message}}</h1>
+            {{/if}}
+
+            <h1 style="font-size: 30px;">Hesap Ayarları</h1>
+            {{#unless displayLink}}
+            <form class="yazilabilir" action="/users/login" method="POST">
+                <h1 style="font-size: 25px;">Oturum Açın</h1>
+                <p>
+                    E-Posta : <input type="email" name="email" placeholder="yazdostum@hotmail.com" required="required">
+                </p>
+                <p>
+                    Şifre : <input type="password" name="password"  id="password"  required="required">
+                </p>
+                <p>
+                    <input type="checkbox">Parolamı hatırla?
+                </p>
+                <button type="submit" onclick="oturumAc()" class="generalbuttons" id="loginbutton">Giriş Yap</button> 
+                <div class="loginsection" style="display: flex; margin: 10px;">
+            <a href="/passwordreset" class="generalbuttons">Şifremi unuttum</a><br>
+            <a href="/users/register" class="generalbuttons">Yeni hesap oluştur</a>
+            </div>
+            </form>
+            {{/unless}}
+            {{#if displayLink}}
+            <form class="yazilabilir" action="/users/login" method="POST">
+                <h1 style="font-size: 25px;">Oturum Ayarları</h1>
+            <div class="loginsection" style="display: flex; margin: 10px;">
+                <a href="/passwordreset" class="generalbuttons">Şifre Değiştir</a>
+                <a href="/users/logout" class="generalbuttons">Çıkış Yap</a>
+            </div>
+            </form>
+            {{/if}}
+        </div>
+
+    </section>

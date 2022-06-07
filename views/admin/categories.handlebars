@@ -1,0 +1,44 @@
+{{>nav1}}
+<section id="BodyMid">
+        <a href="/dilekoneri" id="wish">Dilek & Öneri</a>
+
+        <div class="page-middle">
+            <h1 style="font-size: 30px; color: #7dc87d; text-shadow: 2px 2px #609b60;">Admin Menüsü</h1>
+            {{>adminmenu}}
+
+            <form class="yazilabilir" method="POST">
+                <h1 style="font-size: 25px;">Ürün Kategorisi Ekle</h1>
+                <p>
+                    Kategori Adı : <input type="text" name="name" required="required">
+                </p>
+                <button type="submit" class="generalbuttons" >Kategori Ekle</button> 
+            </form>
+            <div class="yazilabilir">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>AD</th>
+                            <th>SIL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each categories}}
+                            <tr>
+                                <td>{{_id}}</td>
+                                <td>{{name}}</td>
+                                <td>
+                                    <form action="categories/{{_id}}?_method=DELETE" method="post" >
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger">Sil</button>
+                                    </form>
+                                    
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</section>

@@ -1,0 +1,22 @@
+{{>nav1}}
+{{>navresponsive}}
+<section id="BodyMid">
+        <a href="/dilekoneri" id="wish">Dilek & Öneri</a>
+
+        <div class="page-middle">
+            <h1>Yeni Hesap Oluşturun</h1>
+            <form class="yazilabilir" action="/users/register" method="POST">
+                <p>
+                    Kullanıcı Adı : <input type="text" name = "username" placeholder="Sarı Çizmeli Mehmet Ağa" required="required">
+                </p>
+                <p>
+                    E-Posta : <input type="email" name = "email" placeholder="yazdostum@hotmail.com" required="required">
+                </p>
+                <p>
+                    Şifre : <input type="password" name = "password" required="required">
+                </p>
+                <button type="submit" class="generalbuttons">Hesabımı Oluştur</button>  
+            </form>
+        </div>
+
+    </section>

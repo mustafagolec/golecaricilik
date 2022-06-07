@@ -1,0 +1,54 @@
+{{>nav1}}
+{{>navresponsive}}
+<section id="BodyMid">
+        <a href="/dilekoneri" id="wish">Dilek & Öneri</a>
+
+        <div class="page-middle">
+            <h1>Ürün Ekle</h1>
+            <form class="yazilabilir" action="/products/test" method="POST" enctype="multipart/form-data"  style="text-align: left;">
+                <p>
+                    Ürün Adı : <input type="text" name="title" placeholder="Süzme Bal" required="required">
+                </p>
+                <p>
+                    Ürün Açıklaması : <textarea type="text" name="content" placeholder="En doğalından 1 kilo süzme bal"  required="required"></textarea>
+                </p>
+                <p>
+                    Ürün Fiyatı : <input type="text" id="password" name="price" placeholder="130₺" required="required">
+                </p>
+                <p>Kategori:
+                    <select name="category" id="">
+                        
+                        {{#each categories}}
+                            <option value="{{_id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </p>
+                <p>
+                    Ürün Fotoğrafı : <input type="file" name="product_image" required="required">
+                </p>
+                <p style="color: red;">---deneysel alan---</p>
+                <p>
+                    Kaç yıldız? 1-5 : <input type="text" name="starcount" placeholder="5" id="starcount" required="required">
+                </p>
+                <p>
+                    Kaç Değerlendirme? : <input type="text" name="reviewamount" placeholder="16" required="required">
+                </p>
+                <p>
+                    Stok Ne Kadar ? : <input type="text" name="stockamount" placeholder="999" required="required">
+                </p>
+                <p>
+                    Kaç Kilo? : <input type="text" name="weightamount" placeholder="1" required="required">
+                </p>
+                <p>
+                    Ne Kadar Sattı? : <input type="text" name="soldamount" placeholder="361" required="required">
+                </p>
+                <button type="submit" onclick="StarSayisi()" class="generalbuttons" id="loginbutton">Ürünü Ekle</button> 
+            </form>
+            <div class="loginsection" style="display: flex; margin: 10px;">
+            </div>
+        </div>
+
+    </section>
+
+    <script src="/js/addproducttest.js" type="text/JavaScript"></script>                                                       
+    

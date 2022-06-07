@@ -1,0 +1,142 @@
+{{>nav1}}
+{{>navresponsive}}
+
+<section id="BodyMid">
+        <a href="/dilekoneri" id="wish">Dilek & Öneri</a>
+
+        <div class="page-middle">
+            <h1>Promosyon ve Kampanyalar</h1>
+            <div class="slidergallery">
+                <input type="radio" name="images" id="i1" checked>
+                <input type="radio" name="images" id="i2">
+                <input type="radio" name="images" id="i3">
+                <div class="slide_img" id="one">
+                    <img src="images/Slider/Slider1.png" alt="">
+                    <label for="i3" class="pre">
+                        <p><</p>
+                    </label>
+                    <label for="i2" class="nxt">
+                        <p>></p>
+                    </label>
+                </div>
+                <div class="slide_img" id="two">
+                    <img src="images/Slider/Slider2.png" alt="">
+                    <label for="i1" class="pre">
+                        <p><</p>
+                    </label>
+                    <label for="i3" class="nxt">
+                        <p>></p>
+                    </label>
+                </div>
+                <div class="slide_img" id="three">
+                    <img src="images/Slider/Slider3.png" alt="">
+                    <label for="i2" class="pre">
+                        <p><</p>
+                    </label>
+                    <label for="i1" class="nxt">
+                        <p>></p>
+                    </label>
+                </div>
+                <div class="nav">
+                    <label class="dots" id="dot1" for="i1"></label>
+                    <label class="dots" id="dot2" for="i2"></label>
+                    <label class="dots" id="dot3" for="i3"></label>
+                </div>
+            </div>
+
+            <hr id="hrgold">
+
+            <div class="photosmain">
+                <h1>Öne Çıkan Ürünler</h1>  <!--Şuanda statik, teslim gününe yetişirse eklenen ürünlerden 4 tanesini buraya dinamik olarak cek-->
+                {{>products}}
+            </div>
+
+            <hr id="hrgold">
+
+            <div class="hakkimizda">
+                <h1>Hakkımızda</h1>
+                <div class="about-us">
+                    <div class="aboutfoto">
+                        <a href="Hakkimizda"><img src="images/About/aboutus.png" alt="Fotograf Bulunamadı" id="aboutfoto1"></a>
+                    </div>
+                    <div class="aboutinfo">
+                        <h1 style="font-size: 20px;text-decoration: none;text-shadow: 1px 1px black">Göleç Arıcılık</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quo voluptates
+                            repellendus ad inventore aut facilis non, dolorem itaque voluptas, vero distinctio
+                            temporibus ab voluptatem fugiat eaque reiciendis, nisi amet dolores vitae ipsum adipisci
+                            consequatur repudiandae! Rerum dicta voluptate reiciendis eos dolorem provident praesentium
+                            ducimus, voluptas odio dignissimos neque laudantium voluptatem error quaerat esse nisi rem
+                            explicabo tempore et. Autem nobis obcaecati magni odio debitis consequuntur impedit atque.
+                            Blanditiis enim fuga rerum magni laboriosam dolor modi natus facere unde! Quod velit ipsa et
+                            sit odit dignissimos fugit consequatur, tempore numquam facere, quia obcaecati quam
+                            perspiciatis corporis maxime nobis suscipit delectus...</p>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+        </div>
+
+    </section>
+
+    <section class="Comments">
+        <div class="page-middle">
+            <h1>Müşteri Görüşleri</h1>  <!--Bu kısım sayfa görüşleri içindir, zaman yeterse ürünlere de yorum eklenecek-->
+
+            <hr id="hrgold">  
+            <div class="commentcustomer">
+                <div id="userprofile"><img src="images/Comments/HalilIbrahim.png" alt=""></div>
+                <div id="usercomment"><p><h3>Kalite budur!</h3>Çok beğendik! <h5>Halil İbrahim</h5></p></div>
+            </div>
+            <hr id="hrgold">
+            <div class="commentcustomer">
+                <div id="userprofile"><img src="images/Comments/Cirak.png" alt=""></div>
+                <div id="usercomment"><p><h3>Kalite budur!</h3>Çok beğendik! <h5>Cem Kara</h5></p></div>
+            </div>
+            <hr id="hrgold">
+            <div class="commentcustomer">
+                <div id="userprofile"><img src="images/Comments/Fesuphanallah.png" alt=""></div>
+                <div id="usercomment"><p><h3>Kalite budur!</h3>Çok beğendik! <h5>Koray Erkin</h5></p></div>
+            </div>
+            {{#each CommentMain}}
+            <hr id="hrgold">
+                <form action="{{_id}}?_method=DELETE" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="cmdelbutton">X</button>
+                </form>
+            <div class="commentcustomer">
+                <div id="userprofile"><img src="images/Comments/defaultuser.png" alt=""></div>
+                <div id="usercomment"><p><h3>{{cmtitle}}</h3>{{cmcontent}}<h5>{{cmname}}</h5></p></div>
+            </div>
+            {{/each}}
+            <hr id="hrgold">
+
+            {{#unless displayLink}}
+            <div class="leavecomment">              <!--Bu kısım Oturum açılmadığı zaman gorunecek.-->
+                <div class="yazilabilir" style="padding: auto;">
+                    <h1 style="font-size: 25px;">Yorum bırakabilmek için giriş yapmanız gerekmektedir</h1>
+                    <a href="/users/login" class="generalbuttons">Giriş Yap</a>
+                    <br><br>
+                </div>
+            </div>
+            {{/unless}}
+            {{#if displayLink}}
+            <div class="leavecomment">              <!--Bu kısım Oturum açıldığı zaman gorunecek.-->
+                <form class="yazilabilir" action="/addcomment" style="padding: auto;"  method="POST">
+                    <h1>Yorum Bırakın</h1>
+                    <p>
+                        Yorum Başlığı : <input type="text" name="cmtitle" placeholder="Bayıldım!" required="required">
+                    </p>
+                    <p>
+                        Yorum İçeriği : <input type="text" name="cmcontent" placeholder="Bayıldım!" required="required">
+                    </p>
+                    <p>
+                        Adınız : <input type="text" name="cmname" placeholder="Bayıldım!" required="required">
+                    </p>
+                    <button type="submit" class="generalbuttons">Yorum Yap</button>  
+                </form>
+            </div>
+            {{/if}}
+            
+        </div>
+    </section>

@@ -1,0 +1,89 @@
+<head>
+    <link rel="stylesheet" href="/css/products.css">  <!--Urunler kismina ait olduğu için yalnızca bu sayfaya özel-->
+</head>
+
+
+{{>nav1}}
+{{>navresponsive}}
+
+
+<section id="BodyMid">
+        <a href="/dilekoneri" id="wish">Dilek & Öneri</a>
+
+        <div class="page-middle">
+            <div class="product">
+                <div class="productinfo">
+                    <div class="productphoto">
+                        <img src="{{product.product_image}}" alt="Fotograf Bulunamadı">
+                    </div>
+                    <div class="aboutinfo">
+                        <h1 style="font-size: 20px;text-decoration: none;text-shadow: 1px 1px black">{{product.title}}</h1>
+                        <div class="stars" style="text-shadow: 1px 1px rgb(179, 179, 179);">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            {{product.reviewamount}} Değerlendirme ({{product.starcount}} Yıldız)
+                        </div>
+                        <p style="margin: 50px 10px 0px 10px;">{{product.content}}</p>
+                        <p>Stok Sayısı: {{product.stockamount}}</p>
+                        <p>Ağırlık: {{product.weightamount}} Kg</p>
+                        <p style="font-style: normal;font-size: large;font-weight: bold;">{{product.price}} ₺</p>
+                        <button class="addtocart">Sepete Ekle</button>
+                        <p style="margin-top: 100px;">Satılan ürün sayısı: {{product.soldamount}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+        
+        </div>
+         <section class="Comments">
+        <div class="page-middle">
+            <h1>Müşteri Görüşleri</h1>  <!--Bu kısım sayfa görüşleri içindir, zaman yeterse ürünlere de yorum eklenecek-->
+
+            <hr id="hrgold">  
+            <div class="commentcustomer">
+                <div id="userprofile"><img src="/images/Comments/HalilIbrahim.png" alt=""></div>
+                <div id="usercomment"><p><h3>Kalite budur!</h3>Çok beğendik! <h5>Halil İbrahim, İstanbul</h5></p></div>
+            </div>        
+            {{#each CommentMain}}
+            <hr id="hrgold">  
+            <div class="commentcustomer">
+                <div id="userprofile"><img src="/images/Comments/defaultuser.png" alt=""></div>
+                <div id="usercomment"><p><h3>{{cmtitle}}</h3>{{cmcontent}}<h5>{{cmname}}</h5></p></div>
+            </div>
+            {{/each}}
+
+            {{#unless displayLink}}
+            <div class="leavecomment">              <!--Bu kısım Oturum açılmadığı zaman gorunecek.-->
+                <div class="yazilabilir" style="padding: auto;">
+                    <h1 style="font-size: 25px;">Yorum bırakabilmek için giriş yapmanız gerekmektedir</h1>
+                    <a href="/users/login" class="generalbuttons">Giriş Yap</a>
+                    <br><br>
+                </div>
+            </div>
+            {{/unless}}
+            {{#if displayLink}}
+            <div class="leavecomment">              <!--Bu kısım Oturum açıldığı zaman gorunecek.-->
+                <form class="yazilabilir" action="/addcomment" style="padding: auto;"  method="POST">
+                    <h1>Yorum Bırakın</h1>
+                    <p>
+                        Yorum Başlığı : <input type="text" name="cmtitle" placeholder="Bayıldım!" required="required">
+                    </p>
+                    <p>
+                        Yorum İçeriği : <input type="text" name="cmcontent" placeholder="Bayıldım!" required="required">
+                    </p>
+                    <p>
+                        Adınız : <input type="text" name="cmname" placeholder="Bayıldım!" required="required">
+                    </p>
+                    <button type="submit" class="generalbuttons">Yorum Yap</button>  
+                </form>
+            </div>
+            {{/if}}
+            
+        </div>
+    </section>
+
+    </section>

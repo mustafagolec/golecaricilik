@@ -1,0 +1,77 @@
+@keyframes gradient {                                                                       /*Gradient'e animasyon ozelligi verip,*/
+	0% {                                                                                    /*Renk degisimi saglayan kodlar*/
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes float {                  /*Logo süzülmesi için kullanıldı 70 küsürlü satırlar*/
+	0% {
+		transform: translatey(0px);
+        background: rgba(252, 252, 252, 0.192);
+	}
+	50% {
+		transform: translatey(-5px);
+        background: rgb(255, 170, 0);
+	}
+	100% {
+		transform: translatey(0px);
+        background: rgba(252, 252, 252, 0.24);
+	}
+}
+
+@keyframes logocolchanger{
+    0%{background: rgba(252, 252, 252, 0.2);}
+    50%{background: rgba(255, 255, 255, 0.767);}
+    100%{background: rgba(255, 255, 255, 0.2);}
+}
+
+@keyframes floatkeep {                  /*Logo süzülmesi için kullanıldı 70 küsürlü satırlar*/
+	0% {
+		transform: translatey(0px);
+        background: rgba(252, 252, 252, 0.192);
+	}
+	50% {
+		transform: translatey(-5px);
+        background: rgb(63, 77, 204);
+	}
+	100% {
+		transform: translatey(0px);
+        background: rgba(252, 252, 252, 0.24);
+	}
+}
+
+@keyframes slidercolchanger{
+    0%{color:rgb(255, 153, 0);}
+    50%{color: rgb(158, 92, 0);}
+    100%{color: rgb(255, 153, 0);}
+}
+
+
+@keyframes wishcolchanger{
+    0%{background: rgb(255, 255, 255);color: #ff8800;border:#ff5100 solid 1px;}
+    50%{background: #ff9900;color: white;border:#ffffff solid 2px;font-size:larger ;}
+    100%{background: rgb(255, 255, 255);color: #ff8800;border:#ff5100 solid 1px;}
+}
+
+@keyframes wishcolchangerblue{
+    0%{background: rgb(63, 101, 204);color: #ffffff;border:rgb(133, 139, 156) solid 2px;}
+    50%{background: rgb(40, 65, 134);color: white;border:#d2e5ff solid 3px;font-size:larger ;}
+    100%{background: rgb(63, 101, 204);color: #ffffff;border:rgb(138, 145, 163) solid 2px;}
+}
+
+@keyframes admincolchanger{
+    0%{background: #6ecc3f;color: #ffffff;border:rgb(133, 139, 156) solid 2px;}
+    50%{background: #56a230;color: white;border:#d2e5ff solid 3px;font-size:larger ;}
+    100%{background: #6ecc3f;color: #ffffff;border:rgb(138, 145, 163) solid 2px;}
+}
+
+body.hovered {
+    background: rgb(27, 57, 156);
+    transition: 2s all;
+} /*Sayfa genelinde, Arıcılık Hakkında butonunun üstüne gelince body rengi değişimi sağlayan kod*/
